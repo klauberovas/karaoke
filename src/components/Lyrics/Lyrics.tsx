@@ -18,11 +18,13 @@ export const Lyrics = ({
   const currentLineRef = useRef<HTMLParagraphElement>(null!);
 
   useEffect(() => {
-    currentLineRef.current.scrollIntoView({
-      block: 'start',
-      inline: 'nearest',
-      behavior: 'smooth',
-    });
+    if (currentLineRef.current) {
+      currentLineRef.current.scrollIntoView({
+        block: 'start',
+        inline: 'nearest',
+        behavior: 'smooth',
+      });
+    }
   }, [currentLineIndex]);
 
   return (
